@@ -1,0 +1,56 @@
+
+    <div class="mt-5 pt-5 register">
+        <p-card>
+            <ng-template pTemplate="header">
+               <h3 class="m-3 text-center surface-a header-text" color = "primary-color"> Sign Up</h3> 
+            </ng-template>
+            <div class="signup-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="p-field">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-user"></i>
+                            </span>
+                            <span class="p-float-label">
+                                <input type="text" id="username" pInputText formControlName="username"> 
+                                <label for="username">Username</label>
+                            </span>
+                        </div>
+                        <p-message *ngIf="formSubmitted && registerForm.get('username').hasError('required')"  styleClass = "required-custom" severity="error" text = "Username is required"></p-message>
+                    </div>
+                    <div class="p-field mt-4 pt-2">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-user"></i>
+                            </span>
+                            <span class="p-float-label">
+                                <input type="email" id="email" name="email" email="true" pInputText formControlName="email"> 
+                                <label for="email">Email</label>
+                            </span>
+                        </div>
+                        <p-message  *ngIf="formSubmitted && registerForm.get('email').hasError('required')" styleClass = "required-custom" severity="error" text = "Email is required"></p-message>
+                        <p-message  *ngIf="formSubmitted && registerForm.get('email').hasError('email')" styleClass = "required-custom" severity="error" text = "Email must be a valid email address!"></p-message>
+                    </div>
+                    <div class="p-field mt-4 pt-2">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-lock"></i>
+                            </span>
+                            <span class="p-float-label">
+                                <p-password id="password" toggleMask="true" [feedback]=false formControlName="password"></p-password>
+                                <label for="password" class="pass-label">Password</label>
+                            </span>
+                        </div>
+                        <p-message  *ngIf="formSubmitted && registerForm.get('password').hasError('required')" styleClass = "required-custom" severity="error" text = "Password is required"></p-message>
+                        <p-message *ngIf="formSubmitted && registerForm.get('password').hasError('minlength')"  styleClass = "required-custom" severity="error" text = "Username must be at least 6 characters"></p-message>
+                    </div>
+                    <div class="mt-5 btn-container">
+                        <button pButton type="submit" class="p-button-raised p-button-rounded custom-btn"  label="Register"></button>
+                    </div>
+                </form>
+            </div>
+           
+        </p-card>
+       
+    </div>
+    <p-toast></p-toast>

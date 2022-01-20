@@ -1,0 +1,66 @@
+.homepage{
+   // justify-content: center;
+   margin: 0 120px;
+    .login-page{
+        flex: 0 0 40%;
+        z-index: 99999;
+    }
+    .register-page{
+        width: 60%;
+        z-index: 1;
+        position: absolute;
+        right: 120px;
+        h3{
+            color: var(--gray-800);
+            font-family: var(--bs-font-monospace);
+            font-weight: bold;
+            padding-top: 20px;
+        }
+        .register{
+            ::ng-deep{
+                .p-card{
+                    background-image: url('../../../assets/images/bubble.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover; 
+                    background-position: center;
+                }
+            }
+        }
+        ::ng-deep{
+            .p-card{
+                box-shadow: -8px 10px 20px 0rem #847979;
+            }
+        }
+        .custom-body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .register-text{
+                color: black;
+                font-family: var(--bs-font-monospace);
+                font-weight: bold;
+            }
+        }
+        .custom-btn{
+            width: 240px;
+        }
+    }
+  
+} 
+ @media screen and (max-width: 868px) {
+    .homepage {
+        margin: 0 20px;
+    }
+    .register-page{
+        right: 20px !important;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    .homepage {
+       flex-direction: column;
+    }
+    .register-page{
+        width: 100% !important;
+        position: unset !important;
+    }
+  }

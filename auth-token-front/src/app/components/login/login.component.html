@@ -1,0 +1,37 @@
+<div class="mt-5 pt-5">
+  <p-card>
+    <ng-template pTemplate="header">
+      <h3 class="m-3 text-center header-text">Sign in</h3>
+    </ng-template>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-user"></i>
+                </span>
+                <span class="p-float-label">
+                    <input type="text" id="username" pInputText formControlName="username"> 
+                    <label for="username">Username</label>
+                </span>
+            </div>
+            <p-message *ngIf="formSubmitted && loginForm.get('username').hasError('required')" styleClass = "required-custom" severity="error" text = "Username is required"></p-message>
+        </div>
+        <div class="p-field mt-4 pt-2">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-lock"></i>
+                </span>
+                <span class="p-float-label">
+                    <p-password id="password" toggleMask="true" [feedback]=false formControlName="password"></p-password>
+                    <label for="password" class="pass-label">Password</label>
+                </span>
+            </div>
+            <p-message  *ngIf="formSubmitted && loginForm.get('password').hasError('required')" styleClass = "required-custom" severity="error" text = "Password is required"></p-message>
+        </div>
+        <div class="mt-5 btn-container">
+            <button pButton type="submit" class="p-button-raised p-button-rounded"  label="Submit"></button>
+        </div>
+    </form>
+  </p-card>
+</div>
+<p-toast></p-toast>

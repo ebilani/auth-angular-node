@@ -1,0 +1,37 @@
+
+<div class="homepage d-flex mb-5">
+    <div class="login-page">
+      <token-login *ngIf="!showSignUp"></token-login>
+       <token-register  *ngIf="showSignUp"></token-register> 
+    </div>
+    <div class="register-page">
+        <div class="mt-5 register">
+            <p-card *ngIf="!showSignUp">
+                <ng-template pTemplate="header">
+                <h3 class="m-3 text-center surface-a pt-5" color = "primary-color"> Sign Up</h3> 
+                </ng-template>
+                <div class="custom-body mt-5 pt-3">
+                    <h4 class="register-text">Register Now!</h4>
+                    <p style="width: 50%;">Enter your personal details to get a new account.</p>
+                    <div class="mt-5 btn-container mb-5">
+                        <button pButton type="button" class="p-button-raised p-button-rounded custom-btn" (click)= "showSignUpForm()"  label="Sign Up"></button>
+                    </div>
+                </div>
+            </p-card>
+            <p-card  *ngIf="showSignUp">
+                <ng-template pTemplate="header">
+                <h3 class="m-3 text-center surface-a pt-5" color = "primary-color"> Sign In</h3> 
+                </ng-template>
+                <div class="custom-body mt-5 pt-3">
+                    <h4 class="register-text">Login Now!</h4>
+                    <p>Enter your personal details to login.</p>
+                    <div class="mt-5 btn-container mb-5">
+                        <button pButton type="button" class="p-button-raised p-button-rounded custom-btn" (click) = "showLoginForm()"  label="Login"></button>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,48 @@
+.header-text {
+  color: var(--primary-color);
+  font-family: var(--bs-font-monospace);
+  font-weight: bold;
+  padding-top: 20px;
+}
+.pass-label {
+  color: var(--text-color-secondary);
+}
+.p-inputgroup-addon{
+    background:  var(--primary-color);
+    color: var(--primary-color-text);
+}
+::ng-deep{
+    .p-card{
+        box-shadow: -8px 10px 20px 0rem #847979;
+    }
+    .required-custom{
+       margin-top: 20px;
+       width: 100%;
+    }
+    .success-message{
+        background:  var(--primary-color) !important;
+        color: var(--primary-color-text) !important;
+        .p-toast-icon-close{
+            color: var(--primary-color-text) !important;
+        }
+        .pi-check{
+            color: var(--primary-color-text) !important;
+        }
+    }
+}
+
+.btn-container{
+    text-align: center;
+    .p-button-raised{
+        padding: 8px 30px;
+    }
+}
+#password{
+    width: 100%;
+    ::ng-deep{
+        .p-password{
+            width: 100%;
+        }
+    }
+  
+}
